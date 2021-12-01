@@ -14,7 +14,7 @@ export default function StriverMainPage(props) {
       let problemsOnDay1 = [];
       let problemDataOnDay1 = [];
       fb.firestore
-        .collection(`/striver/${props.dayValue}/problemsDay1`)
+        .collection(`/striver/${props.dayValue}/problems`)
         .get()
         .then((querySnapshot) => {
           querySnapshot.docs.forEach((doc) => {
