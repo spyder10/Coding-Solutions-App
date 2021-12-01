@@ -21,7 +21,7 @@ import StriverMainPage from "./StriverMainPage";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import AdminStriverPage from "./AdminStriverPage";
+import AdminPages from "./AdminPages";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import AuthContext from "../context/auth-context";
@@ -141,11 +141,11 @@ function AdminDashboard(props) {
         }}
       >
         <Toolbar />
-        <AdminStriverPage
+        <AdminPages
           tableName={
             params.hasOwnProperty("tableName") ? params.tableName : "1"
           }
-        ></AdminStriverPage>
+        ></AdminPages>
       </Box>
     </Box>
   );
