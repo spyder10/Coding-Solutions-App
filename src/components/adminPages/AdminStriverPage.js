@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import firebase from "firebase/compat/app";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import CloseIcon from "@mui/icons-material/Close";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function AdminStriverPage() {
   const selectedDayRef = useRef();
@@ -219,7 +221,12 @@ export default function AdminStriverPage() {
                       {problemSelected.solutions.map((solution, index) => {
                         return (
                           <li key={index.toString()}>
-                            {solution}
+                            <SyntaxHighlighter
+                              language="javascript"
+                              style={docco}
+                            >
+                              {solution}
+                            </SyntaxHighlighter>
                             <CloseIcon
                               onClick={(e) => {
                                 e.preventDefault();

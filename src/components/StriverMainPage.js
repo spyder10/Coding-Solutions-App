@@ -3,6 +3,8 @@ import { Card } from "react-bootstrap";
 import { fb } from "../service/firebase";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function StriverMainPage(props) {
   console.log(props.dayValue);
@@ -31,6 +33,7 @@ export default function StriverMainPage(props) {
   if (problems.length === 0) {
     return <h6>No problems added yet</h6>;
   }
+
   return (
     <>
       {/* <ul>
@@ -38,6 +41,9 @@ export default function StriverMainPage(props) {
           return <li>{prob}</li>;
         })}
       </ul> */}
+      {/* <SyntaxHighlighter language="javascript" style={docco}>
+        {codeString}
+      </SyntaxHighlighter> */}
       {problemData.map((probData) => {
         return (
           <Card>
@@ -53,7 +59,13 @@ export default function StriverMainPage(props) {
               <ul>
                 <Card.Text>
                   {probData.solutions.map((solution, index) => {
-                    return <li key={index.toString()}>{solution}</li>;
+                    return (
+                      <li key={index.toString()}>
+                        <SyntaxHighlighter language="javascript" style={docco}>
+                          {solution}
+                        </SyntaxHighlighter>
+                      </li>
+                    );
                   })}
                 </Card.Text>
               </ul>

@@ -84,12 +84,24 @@ function Striver(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" className="text-dark">
+          <Typography variant="h5" noWrap component="div" className="text-dark">
             Striver Sheet
           </Typography>
-          <NavLink className="link-dark mx-3 text-decoration-none" to="/">
+          <NavLink
+            className="link-dark mx-3 text-decoration-none font-weight-bold"
+            to="/"
+          >
             Home
           </NavLink>
+          <Typography noWrap component="div" className="text-dark">
+            <a
+              target="_blank"
+              href="https://docs.google.com/document/d/1SM92efk8oDl8nyVw8NHPnbGexTS9W-1gmTEYfEurLWQ/edit"
+              className="text-decoration-none text-dark"
+            >
+              Link to striver sheet
+            </a>
+          </Typography>
         </Toolbar>
       </AppBar>
       <Box
